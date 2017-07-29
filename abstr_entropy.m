@@ -12,10 +12,7 @@ for i = 1:length(x)
             s = Inf;
             return
         end
-        integrand(i) = -g(i)*log(f(i)/g(i));
-        if integrand(i) == -Inf %This will only occur if g(i) is really small
-            integrand(i) = 0;
-        end
+        integrand(i) = -g(i)*log(f(i));
     end       
 end
 s = trapz(x,integrand);
